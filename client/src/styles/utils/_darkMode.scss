@@ -1,0 +1,9 @@
+.is-dark {
+  background-color: rgb(10, 12, 19);
+  color: white;
+  .ticker-item {
+    background-color: $darkmode2;
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+  }
+}

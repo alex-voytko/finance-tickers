@@ -1,0 +1,58 @@
+.ticker-change_percent,
+.ticker-change,
+.ticker-price {
+  position: relative;
+  width: 100px;
+  margin-left: 30px;
+  color: $positiveColor;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  span {
+    position: absolute;
+    margin-left: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    color: $positiveSpanColor;
+    background-color: $positiveSpanBgColor;
+    padding: 3px;
+    border-radius: 3px;
+  }
+  &.negative {
+    color: $negativeColor;
+    span {
+      color: $negativeSpanColor;
+      background-color: $negativeSpanBgColor;
+    }
+  }
+  &.is-pointing:hover {
+    cursor: pointer;
+  }
+}
+.ticker-acronym {
+  width: 70px;
+  text-align: center;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  &.AAPL {
+    background-color: $AAPL;
+  }
+  &.GOOGL {
+    background-color: $GOOGL;
+  }
+  &.MSFT {
+    background-color: $MSFT;
+  }
+  &.AMZN {
+    background-color: $AMZN;
+  }
+  &.FB {
+    background-color: $FB;
+  }
+  &.TSLA {
+    background-color: $TSLA;
+  }
+  &.is-pointing:hover {
+    cursor: pointer;
+  }
+}
