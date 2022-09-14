@@ -1,5 +1,7 @@
 .ticker-list {
   width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
 }

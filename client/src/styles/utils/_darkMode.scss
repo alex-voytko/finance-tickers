@@ -1,9 +1,9 @@
 .is-dark {
-  background-color: rgb(10, 12, 19);
+  background-color: $backgroundDark;
   color: white;
   transition: all 0.3s ease-in-out;
   .ticker-item {
-    background-color: $darkmode2;
+    background-color: $backgroundDarkElements;
     -webkit-box-shadow: unset;
     box-shadow: unset;
     .ticker-select.is-marked {
@@ -11,6 +11,11 @@
     }
     .ticker-acronym {
       opacity: 1;
+    }
+  }
+  .backdrop-modal {
+    .modal-content {
+      background-color: $backgroundDarkElements;
     }
   }
 }

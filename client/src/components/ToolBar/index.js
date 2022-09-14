@@ -1,6 +1,8 @@
+import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { onSelect, setMarkedItems } from "../../redux/slice/select-slice";
 import { onDelete } from "../../redux/slice/delete-slice";
+import { modalContext } from "../../App";
 import Container from "../Container";
 import Button from "../Button";
 
@@ -9,6 +11,7 @@ function ToolBar() {
   const showSelecting = useSelector((state) => state.select.showSelecting);
   const markedItems = useSelector((state) => state.select.markedItems);
   const deletedItems = useSelector((state) => state.delete.deletedItems);
+  const { onModalToggle } = useContext(modalContext);
 
   return (
     <Container className="toolbar-container">
@@ -32,7 +35,9 @@ function ToolBar() {
           />
         )}
       </Container>
-      {deletedItems && <Button name="Trash" />}
+      {deletedItems.length >= 1 && (
+        <Button name="Trash" onClick={() => onModalToggle("is-active")} />
+      )}
     </Container>
   );
 }

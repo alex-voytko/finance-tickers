@@ -5,12 +5,13 @@ $negativeSpanColor: #ac0a0a;
 $positiveSpanBgColor: #9eff9f;
 $negativeSpanBgColor: #ffc6c6;
 
-$darkmode1: rgb(10, 12, 19);
-$darkmode2: #222235;
-$darkmode3: #00089c;
+$backgroundDark: rgb(10, 12, 19);
+$darkAccent: linear-gradient(180deg, #00089c, #1f1fad);
+$backgroundDarkElements: #222235;
 
+$backgroundLite: rgb(228, 228, 228);
 $liteAccent: linear-gradient(180deg, #8ed2ff, #ff9900);
-$darkAccent: linear-gradient(180deg, $darkmode3, $darkmode2);
+$backgroundLiteElements: #f0f0f0;
 
 $AAPL: #888888;
 $GOOGL: #00aeff;

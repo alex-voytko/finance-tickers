@@ -11,6 +11,7 @@
   border-radius: 38px;
   box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
     inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  transform: translateY(-50%);
   cursor: pointer;
   &:after {
     content: "";
@@ -46,7 +47,7 @@
   height: 0;
   visibility: hidden;
   &:checked + .toggle-label {
-    background: $darkmode2;
+    background: $backgroundDarkElements;
   }
   &:checked + .toggle-label:after {
     left: 45px;

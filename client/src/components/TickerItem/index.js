@@ -12,20 +12,14 @@ function TickerItem({ price, i, tickersLast, ticker, change, change_percent }) {
   const deletedItems = useSelector((state) => state.delete.deletedItems);
 
   const styles = {
-    checkbox: classNames(
-      "ticker-select",
-      {
-        "is-visible": showSelecting,
-      },
-      { "is-marked": markedItems.find((el) => el.index === i) }
-    ),
-    item: classNames(
-      "ticker-item",
-      {
-        "is-pointing": showSelecting,
-      },
-      { "is-hiding": deletedItems.find((el) => el.name === ticker) }
-    ),
+    checkbox: classNames("ticker-select", {
+      "is-visible": showSelecting,
+      "is-marked": markedItems.find((el) => el.index === i),
+    }),
+    item: classNames("ticker-item", {
+      "is-pointing": showSelecting,
+      "is-hiding": deletedItems.find((el) => el.name === ticker),
+    }),
     ticker: classNames("ticker-acronym", ticker, {
       "is-pointing": showSelecting,
     }),
