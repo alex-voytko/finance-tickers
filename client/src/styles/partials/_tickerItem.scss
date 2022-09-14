@@ -1,17 +1,16 @@
 .ticker-item {
-  width: fit-content;
+  position: relative;
+  width: clamp(120px, 40%, 160px);
   display: flex;
   flex-direction: column;
   border-radius: 5px;
+  padding: 15px 10px;
   background-color: $backgroundLiteElements;
   -webkit-box-shadow: 1px 1px 2px 2px #cecece6e;
   box-shadow: 1px 1px 2px 2px #afafaf9c;
-  margin-bottom: 7px;
+  margin: 4px;
   overflow: hidden;
   align-items: center;
-  &:last-child {
-    margin-bottom: 0;
-  }
   &.is-pointing {
     &:hover {
       cursor: pointer;
@@ -21,14 +20,15 @@
     display: none;
   }
   .ticker-select {
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 18px;
     height: 18px;
     display: none;
     background-color: white;
     border-radius: 3px;
-    margin-right: 8px;
-    margin-left: 8px;
+    margin: 8px;
     overflow: hidden;
     &.is-visible {
       display: block;
@@ -48,6 +48,48 @@
         height: 18px;
         background-image: url("../../svg/mark.svg");
         background-size: contain;
+      }
+    }
+  }
+}
+@media screen and (min-width: $tablet) {
+  .ticker-item {
+    width: 200px;
+  }
+}
+@media screen and (min-width: $desktop) {
+  .ticker-item {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 8px;
+    overflow: visible;
+    .ticker-select {
+      width: 24px;
+      height: 24px;
+      left: -40px;
+      top: 50%;
+      margin: 0;
+      transform: translateY(-50%);
+      &.is-marked::after {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+@media screen and (min-width: $fullHD) {
+  .ticker-item {
+    margin: 12px;
+    .ticker-select {
+      width: 35px;
+      height: 35px;
+      left: -60px;
+      &.is-marked::after {
+        width: 35px;
+        height: 35px;
       }
     }
   }

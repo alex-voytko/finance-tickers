@@ -1,11 +1,12 @@
 @import "./utils/vars";
 @import "./utils/basic";
-@import "./utils/darkMode";
 @import "./utils/container";
 @import "./partials/app-bar";
+@import "./partials/title";
 @import "./partials/toggler";
 @import "./partials/toolbar";
 @import "./partials/tickerList";
 @import "./partials/tickerItem";
 @import "./partials/tickerValue";
 @import "./partials/modal";
+@import "./partials/darkMode";

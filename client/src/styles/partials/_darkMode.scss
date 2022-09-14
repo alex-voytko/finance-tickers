@@ -16,6 +16,12 @@
   .backdrop-modal {
     .modal-content {
       background-color: $backgroundDarkElements;
+      .deleted-ticker {
+        opacity: 1;
+      }
     }
+  }
+  .app::before {
+    background: $darkAccent;
   }
 }

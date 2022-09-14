@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.233);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(15px);
   border-radius: 0;
   z-index: 1000;
   opacity: 0;
@@ -43,10 +43,14 @@
         margin-bottom: 15px;
       }
       .deleted-ticker {
-        width: 100%;
+        width: 75px;
         border-radius: 5px;
         text-align: center;
         padding: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        opacity: 0.7;
       }
       .deleted-ticker.AAPL {
         background-color: $AAPL;
@@ -69,6 +73,43 @@
     }
     .btn {
       margin-top: 30px;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .backdrop-modal .modal-content {
+    max-width: 250px;
+    .trash-list {
+      .deleted-ticker {
+        font-size: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+@media screen and (min-width: $desktop) {
+  .backdrop-modal .modal-content {
+    max-width: 350px;
+    .trash-list {
+      .deleted-ticker {
+        min-width: 160px;
+        font-size: 30px;
+        padding: 15px;
+      }
+    }
+  }
+}
+@media screen and (min-width: $fullHD) {
+  .backdrop-modal .modal-content {
+    max-width: 450px;
+    .trash-list {
+      .deleted-ticker {
+        min-width: 200px;
+        font-size: 40px;
+        padding: 15px;
+      }
     }
   }
 }

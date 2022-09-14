@@ -1,5 +1,25 @@
 .app {
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 30px 20px;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    left: 0;
+    top: 50px;
+    z-index: -1;
+    background: $liteAccent;
+    filter: blur(50px);
+    transform: rotate(22deg);
+  }
+}
+@media screen and (min-width: $tablet) {
+  .app {
+    padding: 30px 40px 70px 40px;
+  }
+}
+@media screen and (min-width: $desktop) {
+  .app {
+    padding: 50px 90px 100px 90px;
+  }
 }

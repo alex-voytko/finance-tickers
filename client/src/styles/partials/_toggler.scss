@@ -67,5 +67,44 @@
 }
 .toggle-label,
 .toggle-label:after {
-  transition: 0.3s;
+  transition: $standartAnimation;
+}
+@media screen and (min-width: $desktop) {
+  .toggle-label {
+    width: 80px;
+    height: 33px;
+    &::after {
+      width: 33px;
+      height: 33px;
+    }
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  #dark-mode-toggle {
+    &:checked + .toggle-label:after {
+      left: 80px;
+    }
+  }
+}
+@media screen and (min-width: $fullHD) {
+  .toggle-label {
+    width: 120px;
+    height: 50px;
+    &::after {
+      width: 50px;
+      height: 50px;
+    }
+    svg {
+      width: 44px;
+      height: 44px;
+    }
+  }
+  #dark-mode-toggle {
+    &:checked + .toggle-label:after {
+      left: 120px;
+      transform: translateX(-100%);
+    }
+  }
 }
