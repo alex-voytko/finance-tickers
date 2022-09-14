@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import plus_minus from "../../helpers/plus-minus";
 import classNames from "classnames";
 import TickerValue from "../TickerValue";
-import { setMarkedItems } from "../../redux/slice/tickers-slice";
+import { setMarkedItems } from "../../redux/slice/select-slice";
 
 function TickerItem({ price, i, tickersLast, ticker, change, change_percent }) {
   const dispatch = useDispatch();
-  const showSelecting = useSelector((state) => state.tickers.showSelecting);
-  const markedItems = useSelector((state) => state.tickers.markedItems);
+  const showSelecting = useSelector((state) => state.select.showSelecting);
+  const markedItems = useSelector((state) => state.select.markedItems);
+  const deletedItems = useSelector((state) => state.delete.deletedItems);
 
   const styles = {
     checkbox: classNames(
@@ -16,11 +17,15 @@ function TickerItem({ price, i, tickersLast, ticker, change, change_percent }) {
       {
         "is-visible": showSelecting,
       },
-      { "is-marked": markedItems.includes(i) }
+      { "is-marked": markedItems.find((el) => el.index === i) }
     ),
-    item: classNames("ticker-item", {
-      "is-pointing": showSelecting,
-    }),
+    item: classNames(
+      "ticker-item",
+      {
+        "is-pointing": showSelecting,
+      },
+      { "is-hiding": deletedItems.find((el) => el.name === ticker) }
+    ),
     ticker: classNames("ticker-acronym", ticker, {
       "is-pointing": showSelecting,
     }),
@@ -36,7 +41,7 @@ function TickerItem({ price, i, tickersLast, ticker, change, change_percent }) {
       className={styles.item}
       onClick={(e) => {
         const { index } = e.currentTarget.dataset;
-        dispatch(setMarkedItems(Number(index)));
+        dispatch(setMarkedItems({ index: Number(index), name: ticker }));
       }}
       data-index={i}
     >

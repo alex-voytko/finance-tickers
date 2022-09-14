@@ -4,6 +4,7 @@ function TickerValue({ value, diffVal, className }) {
   const valueClassName = classNames(className, {
     negative: diffVal[0] === "-",
   });
+
   return (
     <div className={valueClassName}>
       {value}

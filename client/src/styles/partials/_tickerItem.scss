@@ -16,6 +16,9 @@
       cursor: pointer;
     }
   }
+  &.is-hiding {
+    display: none;
+  }
   .ticker-select {
     position: relative;
     width: 18px;

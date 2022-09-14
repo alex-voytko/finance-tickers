@@ -54,7 +54,7 @@
     background: $darkAccent;
   }
   &:checked + .toggle-label .sun-icon * {
-    fill: rgb(161, 0, 0);
+    fill: black;
   }
   &:checked + .toggle-label .moon-icon * {
     fill: white;

@@ -11,7 +11,7 @@ import ToolBar from "./components/ToolBar";
 function App() {
   const dispatch = useDispatch();
   const tickers = useSelector((state) => state.tickers.items);
-  const isDarkModeOn = useSelector((state) => state.darkMode.isDarkModeOn);
+  const isDarkModeOn = useSelector((state) => state.theme.isDarkModeOn);
   const socket = useRef();
 
   function connect() {

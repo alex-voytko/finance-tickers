@@ -1,4 +1,12 @@
-const plus_minus = (val0, val1) =>
-  val0 - val1 > 0 ? "+" + (val0 - val1) : (val0 - val1).toString();
+const collection = [
+  { index: 1, a: "qwe" },
+  { index: 2, a: "vbn" },
+  { index: 4, a: "dfg" },
+  { index: 7, a: "ety" },
+  { index: 11, a: "fg" },
+];
 
-console.log(plus_minus(4, 1));
+const arr = [];
+
+arr.push(...collection);
+console.log(arr);

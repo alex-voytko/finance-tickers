@@ -1,12 +1,16 @@
 .is-dark {
   background-color: rgb(10, 12, 19);
   color: white;
+  transition: all 0.3s ease-in-out;
   .ticker-item {
     background-color: $darkmode2;
     -webkit-box-shadow: unset;
     box-shadow: unset;
     .ticker-select.is-marked {
       background: $darkAccent;
+    }
+    .ticker-acronym {
+      opacity: 1;
     }
   }
 }

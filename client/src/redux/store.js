@@ -11,18 +11,22 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import tickerReducer from "./slice/tickers-slice";
-import darkModeReducer from "./slice/dark-mode-slice";
+import tickerSlice from "./slice/tickers-slice";
+import selectSlice from "./slice/select-slice";
+import deleteSlice from "./slice/delete-slice";
+import themeSlice from "./slice/theme-slice";
 
 const rootReducer = combineReducers({
-  tickers: tickerReducer,
-  darkMode: darkModeReducer,
+  tickers: tickerSlice,
+  select: selectSlice,
+  delete: deleteSlice,
+  theme: themeSlice,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["showSelecting", "markedItems"],
+  blacklist: ["select"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
