@@ -24,8 +24,13 @@
       background-color: $negativeSpanBgColor;
     }
   }
-  &.is-pointing:hover {
-    cursor: pointer;
+  &.is-pointing {
+    &:hover {
+      cursor: pointer;
+    }
+    span:hover {
+      cursor: pointer;
+    }
   }
 }
 .ticker-acronym {

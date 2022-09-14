@@ -5,5 +5,8 @@
     background-color: $darkmode2;
     -webkit-box-shadow: unset;
     box-shadow: unset;
+    .ticker-select.is-marked {
+      background: $darkAccent;
+    }
   }
 }

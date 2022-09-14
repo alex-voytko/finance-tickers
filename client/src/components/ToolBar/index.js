@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { onSelect } from "../../redux/slice/tickers-slice";
+import { onSelect, setMarkedItems } from "../../redux/slice/tickers-slice";
 
 function ToolBar() {
   const dispatch = useDispatch();
@@ -7,7 +7,12 @@ function ToolBar() {
 
   return (
     <div className="tollbar-container">
-      <button onClick={() => dispatch(onSelect())}>
+      <button
+        onClick={(e) => {
+          dispatch(setMarkedItems(null));
+          dispatch(onSelect());
+        }}
+      >
         {showSelecting ? "Cancel" : "Mark"}
       </button>
       {showSelecting && <button>Delete</button>}

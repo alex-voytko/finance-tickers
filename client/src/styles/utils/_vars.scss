@@ -9,6 +9,9 @@ $darkmode1: rgb(10, 12, 19);
 $darkmode2: #222235;
 $darkmode3: #00089c;
 
+$liteAccent: linear-gradient(180deg, #8ed2ff, #ff9900);
+$darkAccent: linear-gradient(180deg, $darkmode3, $darkmode2);
+
 $AAPL: #888888;
 $GOOGL: #00aeff;
 $MSFT: #005f63;

@@ -16,10 +16,7 @@ function App() {
 
   function connect() {
     socket.current = io("http://localhost:4000/");
-    socket.current.on("ticker", (res) => {
-      console.log(res);
-      dispatch(fetch(res));
-    });
+    socket.current.on("ticker", (res) => dispatch(fetch(res)));
     socket.current.emit("start", (res) => console.log(res));
   }
 

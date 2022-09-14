@@ -22,6 +22,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: "root",
   storage,
+  whitelist: ["showSelecting", "markedItems"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

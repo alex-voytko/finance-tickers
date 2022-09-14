@@ -8,11 +8,16 @@ import { setMarkedItems } from "../../redux/slice/tickers-slice";
 function TickerItem({ price, i, tickersLast, ticker, change, change_percent }) {
   const dispatch = useDispatch();
   const showSelecting = useSelector((state) => state.tickers.showSelecting);
+  const markedItems = useSelector((state) => state.tickers.markedItems);
 
   const styles = {
-    checkbox: classNames("ticker-select", {
-      "is-visible": showSelecting,
-    }),
+    checkbox: classNames(
+      "ticker-select",
+      {
+        "is-visible": showSelecting,
+      },
+      { "is-marked": markedItems.includes(i) }
+    ),
     item: classNames("ticker-item", {
       "is-pointing": showSelecting,
     }),
@@ -27,12 +32,15 @@ function TickerItem({ price, i, tickersLast, ticker, change, change_percent }) {
   };
 
   return (
-    <li className={styles.item} onClick={() => dispatch(setMarkedItems(i))}>
-      <div
-        className={styles.checkbox}
-        onClick={() => dispatch(setMarkedItems(i))}
-        data-index={i}
-      ></div>
+    <li
+      className={styles.item}
+      onClick={(e) => {
+        const { index } = e.currentTarget.dataset;
+        dispatch(setMarkedItems(Number(index)));
+      }}
+      data-index={i}
+    >
+      <div className={styles.checkbox}></div>
       <div className={styles.ticker}>{ticker}</div>
       <TickerValue
         value={price}
@@ -41,13 +49,17 @@ function TickerItem({ price, i, tickersLast, ticker, change, change_percent }) {
       />
       <TickerValue
         value={change}
-        diffVal={tickersLast[i] ? plus_minus(price, tickersLast[i].change) : ""}
+        diffVal={
+          tickersLast[i] ? plus_minus(change, tickersLast[i].change) : ""
+        }
         className={styles.change}
       />
       <TickerValue
         value={change_percent}
         diffVal={
-          tickersLast[i] ? plus_minus(price, tickersLast[i].change_percent) : ""
+          tickersLast[i]
+            ? plus_minus(change_percent, tickersLast[i].change_percent)
+            : ""
         }
         className={styles.change_percent}
       />

@@ -19,7 +19,7 @@
     height: 19px;
     top: 0;
     left: 0;
-    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    background: $liteAccent;
     border-radius: 50%;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   }
@@ -51,7 +51,7 @@
   &:checked + .toggle-label:after {
     left: 45px;
     transform: translateX(-100%);
-    background: linear-gradient(180deg, $darkmode3, $darkmode2);
+    background: $darkAccent;
   }
   &:checked + .toggle-label .sun-icon * {
     fill: rgb(161, 0, 0);

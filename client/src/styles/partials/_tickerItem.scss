@@ -17,6 +17,7 @@
     }
   }
   .ticker-select {
+    position: relative;
     width: 18px;
     height: 18px;
     display: none;
@@ -24,10 +25,24 @@
     border-radius: 3px;
     border: 1px solid grey;
     margin-right: 8px;
+    margin-left: 8px;
+    overflow: hidden;
     &.is-visible {
       display: block;
       &:hover {
         cursor: pointer;
+      }
+    }
+    &.is-marked {
+      background: $liteAccent;
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 18px;
+        height: 18px;
+        background-image: url("../../svg/mark.svg");
+        background-size: contain;
       }
     }
   }

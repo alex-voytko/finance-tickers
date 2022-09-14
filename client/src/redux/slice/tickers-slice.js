@@ -14,8 +14,13 @@ const tickerSlice = createSlice({
     },
     onSelect(state, _) {
       state.showSelecting = !state.showSelecting;
+      if (!state.showSelecting) state.markedItems = [];
     },
     setMarkedItems(state, { payload }) {
+      if (payload === null) {
+        state.markedItems.length = 0;
+        return;
+      }
       const i = state.markedItems.indexOf(payload);
       if (i < 0) state.markedItems.push(payload);
       else state.markedItems.splice(i, 1);
