@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { onToggle } from "../../redux/slice/theme-slice";
+
 import { ReactComponent as SunIcon } from "../../svg/sun.svg";
 import { ReactComponent as MoonIcon } from "../../svg/moon.svg";
 

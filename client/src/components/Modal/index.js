@@ -2,20 +2,21 @@ import { useContext } from "react";
 import { createPortal } from "react-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { onDelete } from "../../redux/slice/delete-slice";
-import { modalContext } from "../../App";
+import { appContext } from "../../App";
+
 import Button from "../Button";
 import { ReactComponent as Restore } from "../../svg/restore.svg";
 
 function Modal({ className }) {
   const dispatch = useDispatch();
-  const { onModalToggle } = useContext(modalContext);
+  const { setModalClassName } = useContext(appContext);
   const deletedItems = useSelector((state) => state.delete.deletedItems);
 
   return createPortal(
     <div
       className={className}
       onClick={(e) => {
-        if (e.target === e.currentTarget) onModalToggle();
+        if (e.target === e.currentTarget) setModalClassName("");
       }}
     >
       <h2>Trash</h2>
@@ -32,7 +33,7 @@ function Modal({ className }) {
             tip="Restore all"
             onClick={() => {
               dispatch(onDelete(null));
-              onModalToggle("");
+              setModalClassName("");
             }}
           >
             <Restore className="icon" />

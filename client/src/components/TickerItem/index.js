@@ -2,8 +2,8 @@ import { memo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import plus_minus from "../../helpers/plus-minus";
 import classNames from "classnames";
-import TickerValue from "../TickerValue";
 import { setMarkedItems } from "../../redux/slice/select-slice";
+import TickerValue from "../TickerValue";
 
 function TickerItem({ price, i, tickersLast, ticker, change, change_percent }) {
   const dispatch = useDispatch();

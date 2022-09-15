@@ -7,6 +7,7 @@
       background-color: $backgroundDarkElements;
       .icon * {
         fill: white;
+        stroke: white;
       }
       &.delete-btn {
         background-color: $negativeColor;
