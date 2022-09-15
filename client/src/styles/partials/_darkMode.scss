@@ -2,6 +2,30 @@
   background-color: $backgroundDark;
   color: white;
   transition: all 0.3s ease-in-out;
+  .toolbar-container {
+    button {
+      background-color: $backgroundDarkElements;
+      .icon * {
+        fill: white;
+      }
+      &.delete-btn {
+        background-color: $negativeColor;
+        &:disabled {
+          opacity: 0.5;
+          background-color: $backgroundDarkElements;
+          &:hover {
+            opacity: 0.5;
+            transform: unset;
+            cursor: default;
+          }
+        }
+      }
+      .tip {
+        background-color: $backgroundDarkElements;
+        color: white;
+      }
+    }
+  }
   .ticker-item {
     background-color: $backgroundDarkElements;
     -webkit-box-shadow: unset;
@@ -14,10 +38,25 @@
     }
   }
   .backdrop-modal {
+    background-color: rgba(0, 0, 0, 0.233);
+    h2 {
+      text-shadow: none;
+    }
     .modal-content {
-      background-color: $backgroundDarkElements;
+      background-color: $backgroundDark;
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
       .deleted-ticker {
         opacity: 1;
+      }
+      .btn {
+        background-color: $backgroundDarkElements;
+        .icon * {
+          fill: white;
+        }
+        .tip {
+          background-color: $backgroundDarkElements;
+          color: white;
+        }
       }
     }
   }

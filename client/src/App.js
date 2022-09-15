@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { io } from "socket.io-client";
 import { fetch } from "./redux/slice/tickers-slice";
 import classNames from "classnames";
-import Title from "./components/Title";
 import TickerList from "./components/TickerList";
 import Container from "./components/Container";
 import ToolBar from "./components/ToolBar";
@@ -30,6 +29,7 @@ function App() {
   useEffect(() => {
     connect();
     document.getElementById("dark-mode-toggle").checked = isDarkModeOn;
+    console.dir(document.querySelector(".ticker-list"));
   }, []);
   useEffect(() => {
     if (isDarkModeOn) {

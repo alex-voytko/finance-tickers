@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { onDelete } from "../../redux/slice/delete-slice";
 import { modalContext } from "../../App";
 import Button from "../Button";
+import { ReactComponent as Restore } from "../../svg/restore.svg";
 
 function Modal({ className }) {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ function Modal({ className }) {
         if (e.target === e.currentTarget) onModalToggle();
       }}
     >
+      <h2>Trash</h2>
       <div className="modal-content">
         <div className="modal-wrapper">
           <ul className="trash-list">
@@ -27,12 +29,14 @@ function Modal({ className }) {
             ))}
           </ul>
           <Button
-            name="Restore all"
+            tip="Restore all"
             onClick={() => {
               dispatch(onDelete(null));
               onModalToggle("");
             }}
-          />
+          >
+            <Restore className="icon" />
+          </Button>
         </div>
       </div>
     </div>,

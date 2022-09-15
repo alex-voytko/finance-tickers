@@ -1,7 +1,71 @@
 .toolbar-container {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+  justify-content: center;
+  flex-direction: row;
+  button {
+    position: relative;
+    margin: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon {
+      width: 20px;
+      height: 20px;
+      padding: 5px;
+      transition: $standartAnimation;
+      &.cancel {
+        transform: rotate(90deg);
+      }
+    }
+    &.delete-btn {
+      background-color: $negativeColor;
+      &:disabled {
+        opacity: 0.5;
+        background-color: $backgroundLiteElements;
+        &:hover {
+          opacity: 0.5;
+          transform: unset;
+          cursor: default;
+          .tip {
+            display: none;
+          }
+        }
+      }
+    }
+    .tip {
+      @extend %tipTemplate;
+    }
+    &:hover .tip {
+      opacity: 1;
+      transform: translateY(-25px);
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    button .icon {
+      width: 28px;
+      height: 28px;
+      padding: 5px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    button .icon {
+      width: 40px;
+      height: 40px;
+      padding: 7px;
+    }
+    button .tip {
+      font-size: 24px;
+    }
+    button:hover .tip {
+      transform: translateY(-40px);
+    }
+  }
+  @media screen and (min-width: $fullHD) {
+    button .icon {
+      width: 55px;
+      height: 55px;
+      padding: 10px;
+    }
+  }
 }

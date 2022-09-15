@@ -1,7 +1,8 @@
-function Button({ name, className = "btn", onClick, disabled }) {
+function Button({ tip, className = "btn", onClick, disabled, children }) {
   return (
     <button className={className} disabled={disabled} onClick={onClick}>
-      {name}
+      {children}
+      <span className="tip">{tip}</span>
     </button>
   );
 }

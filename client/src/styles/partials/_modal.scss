@@ -4,7 +4,7 @@
   height: 100vh;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.233);
+  background-color: rgba(255, 255, 255, 0.233);
   backdrop-filter: blur(15px);
   border-radius: 0;
   z-index: 1000;
@@ -19,11 +19,16 @@
     pointer-events: auto;
     transform: translateX(0);
   }
+  h2 {
+    position: absolute;
+    left: 10px;
+    text-shadow: 2px 2px 4px white;
+  }
   .modal-content {
     position: absolute;
     width: 40vw;
     max-width: 170px;
-    height: 100%;
+    min-height: 100%;
     right: 0;
     top: 0;
     display: flex;
@@ -38,10 +43,11 @@
     .trash-list {
       li {
         width: 100%;
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
       }
-      li:not(:last-child) {
-        margin-bottom: 15px;
-      }
+
       .deleted-ticker {
         width: 75px;
         border-radius: 5px;
@@ -72,12 +78,30 @@
       }
     }
     .btn {
-      margin-top: 30px;
+      display: block;
+      margin: 20px auto 0 auto;
+      .icon {
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+      }
+      .tip {
+        @extend %tipTemplate;
+        left: -100%;
+        top: 0;
+      }
+      &:hover .tip {
+        opacity: 1;
+        transform: translateX(-42px);
+      }
     }
   }
 }
-
 @media screen and (min-width: $tablet) {
+  .backdrop-modal h2 {
+    font-size: 32px;
+    left: 30px;
+  }
   .backdrop-modal .modal-content {
     max-width: 250px;
     .trash-list {
@@ -87,9 +111,18 @@
         padding-right: 10px;
       }
     }
+    .btn .icon {
+      width: 28px;
+      height: 28px;
+    }
   }
 }
 @media screen and (min-width: $desktop) {
+  .backdrop-modal h2 {
+    font-size: 40px;
+    left: 50px;
+    text-shadow: 7px 2px 7px white;
+  }
   .backdrop-modal .modal-content {
     max-width: 350px;
     .trash-list {
@@ -99,9 +132,28 @@
         padding: 15px;
       }
     }
+    .btn .icon {
+      width: 40px;
+      height: 40px;
+      padding: 7px;
+    }
+    .btn {
+      .tip {
+        font-size: 24px;
+      }
+      &:hover .tip {
+        opacity: 1;
+        transform: translateX(-70px);
+      }
+    }
   }
 }
 @media screen and (min-width: $fullHD) {
+  .backdrop-modal h2 {
+    font-size: 50px;
+    left: 50px;
+    text-shadow: 10px 10px 10px white;
+  }
   .backdrop-modal .modal-content {
     max-width: 450px;
     .trash-list {
@@ -110,6 +162,11 @@
         font-size: 40px;
         padding: 15px;
       }
+    }
+    .btn .icon {
+      width: 55px;
+      height: 55px;
+      padding: 10px;
     }
   }
 }

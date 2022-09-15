@@ -30,3 +30,15 @@ span,
 h1:hover {
   cursor: default;
 }
+button {
+  border: none;
+  opacity: 0.7;
+  transition: $standartAnimation;
+  border-radius: 5px;
+  background-color: $backgroundLiteElements;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}

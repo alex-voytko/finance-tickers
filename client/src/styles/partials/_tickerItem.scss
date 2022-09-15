@@ -67,15 +67,15 @@
     margin: 8px;
     overflow: visible;
     .ticker-select {
-      width: 24px;
-      height: 24px;
-      left: -40px;
+      width: 30px;
+      height: 30px;
+      left: -50px;
       top: 50%;
       margin: 0;
       transform: translateY(-50%);
       &.is-marked::after {
-        width: 24px;
-        height: 24px;
+        width: 30px;
+        height: 30px;
       }
     }
   }

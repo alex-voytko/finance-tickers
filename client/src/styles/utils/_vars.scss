@@ -25,3 +25,15 @@ $desktop: 1200px;
 $fullHD: 1920px;
 
 $standartAnimation: all 0.3s ease-in-out;
+
+%tipTemplate {
+  position: absolute;
+  top: -10px;
+  opacity: 0;
+  pointer-events: none;
+  padding: 8px;
+  font-family: "Montserrat", sans-serif;
+  background-color: $backgroundLiteElements;
+  border-radius: 5px;
+  transition: $standartAnimation;
+}
