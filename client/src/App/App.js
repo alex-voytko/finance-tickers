@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef, createContext, memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { io } from "socket.io-client";
-import { fetch } from "./redux/slice/tickers-slice";
+import { fetch } from "../redux/slice/tickers-slice";
 import classNames from "classnames";
 
-import TickerList from "./components/TickerList";
-import Container from "./components/Container";
-import ToolBar from "./components/ToolBar";
-import AppBar from "./components/AppBar";
-import Modal from "./components/Modal";
+import TickerList from "../components/TickerList";
+import Container from "../components/Container";
+import ToolBar from "../components/ToolBar";
+import AppBar from "../components/AppBar";
+import Modal from "../components/Modal";
 
 export const appContext = createContext();
 
@@ -31,6 +31,7 @@ function App() {
   useEffect(() => {
     connect();
     document.getElementById("dark-mode-toggle").checked = isDarkModeOn;
+    return socket.current.disconnect();
   }, []);
   useEffect(() => {
     if (isDarkModeOn) document.body.classList.add("is-dark");
