@@ -23,7 +23,7 @@
 
 ### Select mode
 
-- This mode allows you to select tickers as many as you want. Instead to try to click straight the checkbox, you can also click in any zone of "<li>" item to select it;
+- This mode allows you to select tickers as many as you want. Instead to try to click straight the checkbox, you can also click in any zone of "li" item to select it;
 
 ### Deleting
 
