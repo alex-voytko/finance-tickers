@@ -45,7 +45,7 @@
 
 ### Adaptive/Responsive
 
--well adapted for different devices: from small smartphone with 360px of viewport-width (such as Sumsung s10e) to Retina displays 3000px+ (MacBook Pro 16)
+- Well adapted for different devices: from small smartphone with 360px of viewport-width (such as Sumsung s10e) to Retina displays 3000px+ (MacBook Pro 16)
 
 ## Not implemented:
 
